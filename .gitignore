@@ -340,3 +340,6 @@ ASALocalRun/
 healthchecksdb
 
 Build/InjectinoOnly/
+
+# Ignore the VS Directory.build.props file
+**Directory.Build.props 
