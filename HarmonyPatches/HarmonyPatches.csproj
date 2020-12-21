@@ -119,8 +119,10 @@
     <Compile Include="HarmonyPatches\H_ExportInfluenceMapToCSV.cs" />
     <None Include="HarmonyPatches\H_FindBlockerBetween.cs" />
     <None Include="HarmonyPatches\H_FindBlockerReciprocal.cs" />
+    <Compile Include="HarmonyPatches\H_LoadRequest.cs" />
     <Compile Include="HarmonyPatches\H_MissileLauncherEffect__Update.cs" />
     <None Include="HarmonyPatches\H_SortMoveCandidatesByInfMapNode_Tick.cs" />
+    <Compile Include="HarmonyPatches\H_DataManager.cs" />
     <Compile Include="HarmonyPatches\H_SimGameState.cs" />
     <Compile Include="HarmonyPatches\H_TerraiWaterHelper.cs" />
     <None Include="HarmonyPatches\H_TerraiWaterHelper_HasWater.cs" />

@@ -21,24 +21,45 @@ namespace RogueTechPerfFixes.DataManager
 			logger.Log($" ST: {st}");
 		}
 
+		private static async Task HandlerAsync(Action<string> handler, string content)
+        {
+			await Task.Run(() => handler(content));
+        }
+
 		public static async Task LoadResource(string path, Action<string> handler)
 		{
 			try
 			{
+				//logger.Log($"File at path: {path} loaded in {sw.ElapsedMilliseconds}ms at {Environment.TickCount}");
+
+				Stopwatch sw = new Stopwatch();
+
+				logger.Log($"File at path: {path} started load at {Environment.TickCount}");
+				//sw.Start();
+
 				using (FileStream arg = new FileStream(path, FileMode.Open, FileAccess.Read))
 				{
 					StreamReader sr = new StreamReader(arg);
 					//logger.Log($"READ file at path: {path}");
 
-					StackTrace st = new StackTrace();
-					//logger.Log($" ST: {st}");
-
-					string content = await sr.ReadToEndAsync();
+					//string content = await sr.ReadToEndAsync();
+					string content = sr.ReadToEnd();
+					
+					//sw.Stop();
+					//logger.Log($"File at path: {path} loaded in {sw.ElapsedMilliseconds}ms at {Environment.TickCount}");
 
 					// TODO: Add DataLoader.Entry references here, so file update monitoring can happen -or- replicate with our own
 					//logger.Log($"Handling file at path: {path} with content: {content}");
 					//logger.Log($"HANDLE file at path: {path}");
+
+					//sw.Restart();
+					//logger.Log($"File at path: {path} started handling at {Environment.TickCount}");
+
 					handler(content);
+					//await HandlerAsync(handler, content);
+					
+					//sw.Stop();
+					//logger.Log($"File at path: {path} handled in {sw.ElapsedMilliseconds}ms at {Environment.TickCount}");
 				}
 			}
 			catch (Exception exception)

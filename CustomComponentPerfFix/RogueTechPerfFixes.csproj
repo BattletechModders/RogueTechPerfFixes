@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataManager\AsyncJsonLoadRequest.cs" />
+    <Compile Include="DataManager\HeatsinkBulkLoader.cs" />
     <Compile Include="Models\ActionSemaphore.cs" />
     <Compile Include="Models\CecilInjector.cs" />
     <Compile Include="Models\HarmonyPatcher.cs" />
