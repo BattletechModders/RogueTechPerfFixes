@@ -171,7 +171,7 @@ namespace RogueTechPerfFixes.HarmonyPatches
 
 			//CreateAllLoadRequest(BattleTechResourceType.AmmunitionBoxDef, __instance.DataManager);
 
-			CreateAllLoadRequest(BattleTechResourceType.HeatSinkDef, __instance.DataManager);
+			//CreateAllLoadRequest(BattleTechResourceType.HeatSinkDef, __instance.DataManager);
 
 			//CreateAllLoadRequest(BattleTechResourceType.UpgradeDef, __instance.DataManager);
 
@@ -180,7 +180,7 @@ namespace RogueTechPerfFixes.HarmonyPatches
 			//CreateAllLoadRequest(BattleTechResourceType.ItemCollectionDef, __instance.DataManager, true);
 
 			logger.Log($"Returning FALSE from RequestDataManagerResources");
-			return false;
+			return true;
 		}
 		
 		private static void CreateAllLoadRequest(BattleTechResourceType type, BattleTech.Data.DataManager dataManager, bool filterByOwnership=false)

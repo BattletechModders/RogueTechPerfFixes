@@ -31,27 +31,31 @@ namespace RogueTechPerfFixes.HarmonyPatches
 			HeatsinkBulkLoader hbl = new HeatsinkBulkLoader(__instance);
 			Stopwatch sw = new Stopwatch();
 			sw.Start();
+			logger.Log($"Starting bulk load of heatsinks");
 			hbl.LoadAll();
 			sw.Stop();
 			logger.Log($"Bulk load of heatsinks complete in {sw.ElapsedMilliseconds}ms");
 		}
 	}
 
-	[HarmonyPatch(typeof(BattleTech.Data.DataManager), "CreateLoadRequest")]
-	static class DataManager_CreateLoadRequest
-	{
-		static void Postfix(BattleTech.Data.DataManager __instance, LoadRequest __result)
-		{
-			StackTrace st = new StackTrace();
-			string stS = st.ToString();
-			bool isDepLoad = stS.Contains("BattleTech.Data.DataManager.RequestDependencies");
-			if (isDepLoad)
-				logger.Log($"DM new dependency load with hashCode: {__result.GetHashCode()}");
-			else
-				logger.Log($"DM novel CreateLoadRequest with hashCode: {__result.GetHashCode()} invoked from: {st.ToString()}");
+	//[HarmonyPatch(typeof(BattleTech.Data.DataManager), "CreateLoadRequest")]
+	//static class DataManager_CreateLoadRequest
+	//{
+	//	static void Postfix(BattleTech.Data.DataManager __instance, LoadRequest __result)
+	//	{
+	//		StackTrace st = new StackTrace();
+	//		string stS = st.ToString();
+	//		bool isDepLoad = stS.Contains("BattleTech.Data.DataManager.RequestDependencies");
+	//		if (__result != null)
+ //           {
+	//			if (isDepLoad)
+	//				logger.Log($"DM new dependency load with hashCode: {__result.GetHashCode()}");
+	//			else
+	//				logger.Log($"DM novel CreateLoadRequest with hashCode: {__result.GetHashCode()} invoked from: {st}");
+	//		}
 				
-		}
-	}
+	//	}
+	//}
 
 	[HarmonyPatch(typeof(DependencyLoadRequest), "RequestResource")]
 	static class DependencyLoadRequest_RequestResource

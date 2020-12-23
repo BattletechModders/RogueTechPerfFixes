@@ -72,10 +72,8 @@
       <HintPath>$(BattleTechGameDir)\BattleTech_Data\Managed\DOTweenPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="LowVisibility, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(BattleTechGameDir)\Mods_BTA_Shared_Old\LowVisibility\LowVisibility.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="LowVisibility">
+      <HintPath>..\..\..\..\..\..\..\Steam\steamapps\common\BATTLETECH\Mods\LowVisibility\LowVisibility.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
