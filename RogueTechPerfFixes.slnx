@@ -1,0 +1,9 @@
+﻿<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="InjectionOnly" />
+    <BuildType Name="Release" />
+  </Configurations>
+  <Project Path="RogueTechPerfFixesInjector\RogueTechPerfFixesInjector.csproj" Type="Classic C#" />
+  <Project Path="RogueTechPerfFixes\RogueTechPerfFixes.csproj" Type="Classic C#" />
+</Solution>
