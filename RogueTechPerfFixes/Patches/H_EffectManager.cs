@@ -18,6 +18,8 @@ public static class H_EffectManager
             return Mod.Settings.Patch.Vanilla;
         }
 
+        // HarmonyX: Priority: Set to Last after CustomStatisticsEffects
+        [HarmonyPriority(Priority.Last)]
         public static void Postfix(Effect effect)
         {
             if (!_cache.TryGetValue(effect.Target, out var effects))
@@ -37,6 +39,8 @@ public static class H_EffectManager
             return Mod.Settings.Patch.Vanilla;
         }
 
+        // HarmonyX: Priority: Set to Last after CustomStatisticsEffects
+        [HarmonyPriority(Priority.Last)]
         public static void Postfix(Effect e)
         {
             if (_cache.TryGetValue(e.Target, out var effects))
@@ -54,6 +58,8 @@ public static class H_EffectManager
             return Mod.Settings.Patch.Vanilla;
         }
 
+        // HarmonyX: Priority: Set to Last after CustomStatisticsEffects
+        [HarmonyPriority(Priority.Last)]
         public static void Postfix(Effect e)
         {
             if (_cache.TryGetValue(e.Target, out var effects))
@@ -119,6 +125,9 @@ public static class H_EffectManager
             return Mod.Settings.Patch.Vanilla;
         }
 
+    
+        // HarmonyX: Priority: Set to Last after CustomStatisticsEffects
+        [HarmonyPriority(Priority.Last)]
         public static void Postfix(List<Effect> ___effects)
         {
             _cache.Clear();
