@@ -3,8 +3,8 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Krafs.Publicizer" Version="2.3.0" />
-    <PackageVersion Include="HarmonyX" Version="2.10.1" />
-    <PackageVersion Include="PolySharp" Version="1.15.0" />
+    <PackageVersion Include="Krafs.Publicizer" Version="2.3.2" />
+    <PackageVersion Include="HarmonyX" Version="2.16.1" />
+    <PackageVersion Include="PolySharp" Version="1.17.0" />
   </ItemGroup>
 </Project>
